@@ -104,7 +104,7 @@ a:hover {
 /* --- Top Navigation --- */
 .top-nav {
   background-color: rgba(44, 62, 80, 0.95); /* Semi-transparent dark blue */
-  padding: 15px 0;
+  padding: 8px 0;
   position: sticky; /* Stays at top when scrolling */
   top: 0;
   z-index: 1000;
