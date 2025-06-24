@@ -3,102 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wild Gooseberries Resort</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-image: url('images/cover.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
-    header h1 {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 50px;
-      font-size: 18px;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
+  <title>Wild Gooseberries Resort - Thirunelly, Wayanad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"> </head>
 <body>
-  <header>
-    <h1>Welcome to Wild Gooseberries Resort</h1>
+
+  <nav class="top-nav">
+    <div class="container">
+      <a href="index.html" class="site-logo">Wild Gooseberries Resort</a>
+      <ul>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#gallery-section">Gallery</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+        <li><a href="https://wa.me/919562614314" target="_blank" class="nav-btn">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="hero-content">
+      <h1>Welcome to Wild Gooseberries Resort</h1>
+      <p class="hero-tagline">Your Tranquil Escape in Thirunelly, Wayanad</p>
+      <a href="#about-us" class="btn btn-primary">Discover More</a>
+    </div>
   </header>
 
-  <div class="section">
-    <h2>Experience Tranquility in Thirunelly, Wayanad</h2>
-    <p>Stay in a beautifully restored traditional Kerala home surrounded by lush greenery. Just walkable from the Thirunelly Temple and Kalindi river, enjoy peaceful stays, homely food, and nature at its best. Affordable and serene, perfect for families and weekend getaways.</p>
-  </div>
-
-  <div class="section">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="images/1.jpg" alt="Resort View" />
-      <img src="images/2.jpg" alt="Traditional House" />
-      <img src="images/3.jpg" alt="Hut Room" />
-      <img src="images/4.jpg" alt="Adigamana Kitchen" />
-      <img src="images/5.jpg" alt="Green Lawn" />
-      <img src="images/6.jpg" alt="Exterior View" />
-      <img src="images/7.jpg" alt="Bedroom" />
-      <img src="images/8.jpg" alt="Evening View" />
-      <img src="images/9.jpg" alt="Dining Area" />
+  <section id="about-us" class="section about-section">
+    <div class="container">
+      <h2>Experience Tranquility in Thirunelly, Wayanad</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Nestled amidst the lush greenery of Thirunelly, Wild Gooseberries Resort offers a serene escape in a beautifully restored traditional Kerala home. Just a short walk from the ancient Thirunelly Temple and the pristine Kalindi River, our resort provides a peaceful sanctuary for your mind and soul.</p>
+          <p>Enjoy **homely, authentic Kerala cuisine**, comfortable accommodations, and immerse yourself in nature at its very best. Our affordable and tranquil setting is perfect for families, couples, and anyone seeking a refreshing weekend getaway amidst Wayanad's captivating beauty.</p>
+          <p>Explore nearby trekking trails, unwind by the riverside, or simply relax in the serene ambiance of our garden. At Wild Gooseberries, every moment is an invitation to reconnect with yourself and nature.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/about_thirunelly.jpg" alt="Thirunelly Temple or Kalindi River view">
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> <a href="tel:+919562614314">+91 95626 14314</a></p>
-    <p><strong>Email:</strong> <a href="mailto:wildgooseberries@gmail.com">wildgooseberries@gmail.com</a></p>
-  </div>
+  <section class="section highlights-section">
+    <div class="container">
+      <h2>Why Choose Wild Gooseberries?</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <img src="images/icon_temple.png" alt="Temple Icon"> <h3>Walkable to Thirunelly Temple</h3>
+          <p>Immerse yourself in spiritual tranquility.</p>
+        </div>
+        <div class="highlight-item">
+          <img src="images/icon_nature.png" alt="Nature Icon">
+          <h3>Close to Kalindi River</h3>
+          <p>Enjoy riverside strolls and fresh air.</p>
+        </div>
+        <div class="highlight-item">
+          <img src="images/icon_food.png" alt="Food Icon">
+          <h3>Homely Kerala Cuisine</h3>
+          <p>Savor authentic local dishes, freshly prepared.</p>
+        </div>
+        <div class="highlight-item">
+          <img src="images/icon_family.png" alt="Family Icon">
+          <h3>Family-Friendly & Affordable</h3>
+          <p>Comfortable stays for all, without breaking the bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery-section" class="section gallery-section">
+    <div class="container">
+      <h2>Our Photo Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/1.jpg" alt="Resort View" />
+        <img src="images/2.jpg" alt="Traditional House" />
+        <img src="images/3.jpg" alt="Hut Room" />
+        <img src="images/4.jpg" alt="Adigamana Kitchen" />
+        <img src="images/5.jpg" alt="Green Lawn" />
+        <img src="images/6.jpg" alt="Exterior View" />
+        <img src="images/7.jpg" alt="Bedroom" />
+        <img src="images/8.jpg" alt="Evening View" />
+        <img src="images/9.jpg" alt="Dining Area" />
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready for Your Tranquil Getaway?</h2>
+      <p>Connect with us to plan your perfect stay at Wild Gooseberries Resort.</p>
+      <a href="https://wa.me/919562614314" target="_blank" class="btn btn-secondary btn-large">WhatsApp Us Now</a>
+    </div>
+  </section>
+
+  <section id="contact-section" class="section contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-details">
+        <p><strong>Phone:</strong> <a href="tel:+919562614314">+91 95626 14314</a></p>
+        <p><strong>Email:</strong> <a href="mailto:wildgooseberries@gmail.com">wildgooseberries@gmail.com</a></p>
+        <p><strong>Address:</strong> Wild Gooseberries Resort, Near Thirunelly Temple, Thirunelly, Wayanad, Kerala.</p>
+      </div>
+      </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Wild Gooseberries Resort, Thirunelly. All rights reserved.</p>
+      <div class="social-links">
+        </div>
+    </div>
+  </footer>
 
   <a class="whatsapp-button" href="https://wa.me/919562614314" target="_blank">
     WhatsApp Us
   </a>
 
-  <footer>
-    &copy; 2025 Wild Gooseberries Resort, Thirunelly. All rights reserved.
-  </footer>
 </body>
 </html>
