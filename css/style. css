@@ -1,0 +1,466 @@
+/* General Resets & Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* A clean, modern sans-serif for body text */
+  line-height: 1.7; /* Increased line-height for better readability */
+  background-color: #F8F8F8; /* Lighter background for a fresh feel */
+  color: #3D3D3D; /* Softer dark grey for text */
+}
+
+/* Container for Centering Content */
+.container {
+  max-width: 1100px; /* Slightly wider content area */
+  margin: 0 auto;
+  padding: 0 25px; /* More padding on sides for smaller screens */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif; /* Elegant serif for headings */
+  color: #2C3E50; /* Deep blue/charcoal for strong contrast */
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.8em; } /* Larger for hero */
+h2 { font-size: 2.5em; text-align: center; margin-bottom: 1.5em; } /* Centered section titles */
+h3 { font-size: 1.8em; }
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50; /* Green for links, matching nature theme */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #388E3C; /* Darker green on hover */
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 50px; /* Pill shape for a friendly look */
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  background-color: #4CAF50; /* Primary action button: Green */
+  color: #fff;
+  border: 2px solid #4CAF50;
+}
+
+.btn-primary:hover {
+  background-color: #388E3C;
+  border-color: #388E3C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  background-color: #8BC34A; /* Secondary action button: Lighter green */
+  color: #fff;
+  border: 2px solid #8BC34A;
+}
+
+.btn-secondary:hover {
+  background-color: #7CB342;
+  border-color: #7CB342;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.nav-btn { /* Specific style for button in navigation */
+  background-color: #FFC107; /* Yellow for attention */
+  color: #2C3E50;
+  border: 2px solid #FFC107;
+  padding: 8px 18px;
+  font-size: 0.95em;
+  box-shadow: none; /* Remove shadow for cleaner nav look */
+}
+
+.nav-btn:hover {
+  background-color: #FFA000;
+  border-color: #FFA000;
+  transform: none; /* No vertical transform for nav button */
+  box-shadow: none;
+}
+
+
+/* --- Top Navigation --- */
+.top-nav {
+  background-color: rgba(44, 62, 80, 0.95); /* Semi-transparent dark blue */
+  padding: 15px 0;
+  position: sticky; /* Stays at top when scrolling */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.top-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.top-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.top-nav ul li {
+  margin-left: 30px;
+}
+
+.top-nav ul li a {
+  color: #E0E0E0; /* Lighter grey for links */
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.top-nav ul li a:hover {
+  color: #FFC107; /* Yellow on hover for navigation */
+}
+
+.top-nav ul li a::after { /* Underline effect on hover */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #FFC107;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.top-nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+/* --- Hero Section (Header) --- */
+.hero-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/cover.jpg') no-repeat center center/cover;
+  height: 90vh; /* Takes more vertical space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px; /* Add padding for smaller screens */
+  box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3); /* Subtle shadow at bottom */
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 30px;
+  /* Removed background from h1 and applied to content block for better control */
+}
+
+.hero-content h1 {
+  font-size: 4.5em; /* Larger, more impactful */
+  color: #fff; /* White text for contrast */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Stronger shadow for readability */
+  margin-bottom: 25px;
+}
+
+.hero-tagline {
+  font-size: 1.8em;
+  color: #E0E0E0;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Section Common Styles --- */
+.section {
+  padding: 80px 0; /* More vertical padding for sections */
+  overflow: hidden; /* Clear floats/prevent content overflow */
+}
+
+.section:nth-of-type(even) { /* Alternate background for sections */
+  background-color: #F0F5F0; /* A very light green/grey */
+}
+
+/* --- About Section --- */
+.about-section .container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* Space between text and image */
+}
+
+.about-section .about-text {
+  flex: 2; /* Text takes more space */
+}
+
+.about-section .about-image {
+  flex: 1; /* Image takes less space */
+  text-align: center;
+}
+
+.about-section .about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+/* --- Highlights Section --- */
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.highlight-item {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.highlight-item img {
+  width: 60px; /* Icon size */
+  height: 60px;
+  margin-bottom: 20px;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2)); /* Subtle shadow for icons */
+}
+
+.highlight-item h3 {
+  color: #4CAF50; /* Green for highlight titles */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.highlight-item p {
+  color: #666;
+  font-size: 0.95em;
+}
+
+
+/* --- Gallery Section --- */
+.gallery-grid { /* Renamed from .gallery for clarity */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Larger minimum size for images */
+  gap: 20px; /* More space between images */
+  margin-top: 40px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px; /* Fixed height for consistent look */
+  object-fit: cover; /* Ensures images fill the space without distortion */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* --- Call to Action Section --- */
+.cta-section {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cta_bg.jpg') no-repeat center center/cover; /* Use a different background image for CTA */
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta-section h2 {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 25px;
+}
+
+.cta-section p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Contact Section --- */
+.contact-section .container {
+  text-align: center;
+}
+
+.contact-details {
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: inline-block; /* To contain the shadow and align */
+  max-width: 600px;
+}
+
+.contact-details p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.contact-details a {
+  font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+  background: #2C3E50; /* Dark blue/charcoal, same as header */
+  color: white;
+  text-align: center;
+  padding: 30px 20px; /* More padding */
+  font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* --- WhatsApp Button --- */
+.whatsapp-button {
+  background-color: #25d366;
+  color: white;
+  padding: 15px 25px; /* Slightly larger button */
+  border-radius: 50px;
+  font-size: 1.1em; /* Larger font */
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1DA851;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h1 { font-size: 2.8em; }
+  h2 { font-size: 2em; }
+  h3 { font-size: 1.5em; }
+
+  .top-nav .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-logo {
+    margin-bottom: 15px;
+  }
+
+  .top-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-nav ul li {
+    margin: 8px 0;
+  }
+
+  .top-nav ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .top-nav ul li a::after {
+    display: none; /* Remove underline on mobile nav items */
+  }
+
+  .nav-btn {
+    margin-top: 10px;
+    width: 80%; /* Make button wider on mobile */
+    max-width: 200px;
+  }
+
+  .hero-content h1 {
+    font-size: 3em;
+  }
+
+  .hero-tagline {
+    font-size: 1.3em;
+  }
+
+  .about-section .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-section .about-image {
+    margin-top: 30px;
+  }
+
+  .highlights-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Stack elements on small screens */
+  }
+
+  .cta-section {
+    padding: 80px 15px;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5em;
+  }
+
+  .whatsapp-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 18px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  .hero-tagline { font-size: 1em; }
+  .btn { padding: 10px 20px; font-size: 1em; }
+  .btn-large { padding: 12px 25px; font-size: 1.05em; }
+}
+
