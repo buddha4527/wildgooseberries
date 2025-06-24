@@ -115,6 +115,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Removed flex-direction: column from desktop here */
 }
 
 .site-logo {
@@ -123,15 +124,39 @@ a:hover {
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.5px;
+  /* Removed margin-bottom here */
 }
 
-.top-nav ul {
-  display: flex;
+/* NEW: Hamburger Icon Styling */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative; /* Needed for positioning relative to its parent .top-nav */
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff; /* White bars for contrast on dark nav */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.top-nav ul { /* Targeting the actual ul element */
+  display: flex; /* Display as flex on desktop */
   list-style: none;
+  /* Removed flex-direction: column and width: 100% from desktop here */
 }
 
 .top-nav ul li {
   margin-left: 30px;
+  /* Removed margin: 8px 0 here */
 }
 
 .top-nav ul li a {
@@ -140,6 +165,7 @@ a:hover {
   padding: 5px 0;
   position: relative;
   transition: color 0.3s ease;
+  /* Removed display: block and padding: 10px 0 here */
 }
 
 .top-nav ul li a:hover {
@@ -155,16 +181,28 @@ a:hover {
   bottom: -5px;
   left: 0;
   transition: width 0.3s ease;
+  /* Removed display: none here */
 }
 
 .top-nav ul li a:hover::after {
   width: 100%;
 }
 
+.nav-btn { /* Specific style for button in navigation */
+  background-color: #FFC107; /* Yellow for attention */
+  color: #2C3E50;
+  border: 2px solid #FFC107;
+  padding: 8px 18px;
+  font-size: 0.95em;
+  box-shadow: none; /* Remove shadow for cleaner nav look */
+  /* Removed width: 80% and max-width: 200px from desktop here */
+}
+
 
 /* --- Hero Section (Header) --- */
 .hero-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('..images/cover.jpg') no-repeat center center/cover;
+  /* FIXED: Corrected image path '..images/cover.jpg' to '../images/cover.jpg' */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/cover.jpg') no-repeat center center/cover;
   height: 90vh; /* Takes more vertical space */
   display: flex;
   justify-content: center;
@@ -178,7 +216,6 @@ a:hover {
 .hero-content {
   max-width: 800px;
   padding: 30px;
-  /* Removed background from h1 and applied to content block for better control */
 }
 
 .hero-content h1 {
@@ -366,6 +403,10 @@ footer p {
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* From bottom */
+  right: 20px; /* From right */
+  z-index: 999; /* Ensure it's on top */
   transition: all 0.3s ease;
 }
 
@@ -374,6 +415,7 @@ footer p {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
+
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
@@ -385,37 +427,83 @@ footer p {
   h2 { font-size: 2em; }
   h3 { font-size: 1.5em; }
 
+  /* Modified: Top Nav for Mobile */
   .top-nav .container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row; /* Keep logo and hamburger in a row */
+    justify-content: space-between; /* Space them out */
+    align-items: center;
   }
 
   .site-logo {
-    margin-bottom: 15px;
+    margin-bottom: 0; /* No margin below logo on mobile nav */
   }
 
-  .top-nav ul {
-    flex-direction: column;
-    width: 100%;
+  /* NEW: Hamburger Display on Mobile */
+  .hamburger {
+      display: flex; /* Show hamburger on mobile */
   }
 
-  .top-nav ul li {
-    margin: 8px 0;
+  /* NEW: Navigation Links on Mobile */
+  #nav-links { /* Targeting by ID as specified in HTML */
+      display: none; /* Hide nav links by default on mobile */
+      flex-direction: column; /* Stack links vertically when opened */
+      width: 100%; /* Make the menu full width */
+      background-color: rgba(44, 62, 80, 0.98); /* Same as navbar or slightly darker */
+      position: absolute; /* Position relative to the .top-nav */
+      top: 100%; /* Position right below the navbar */
+      left: 0; /* Align to the left edge */
+      padding: 20px 0; /* Vertical padding */
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Shadow for the opened menu */
+      z-index: 999; /* Ensure it's above other content but below hamburger */
+      transition: all 0.3s ease-in-out; /* Smooth transition for opening/closing */
+      transform: translateY(-100%); /* Start off-screen */
+      opacity: 0; /* Start invisible */
+      pointer-events: none; /* Disable clicks when hidden */
   }
 
-  .top-nav ul li a {
-    display: block;
-    padding: 10px 0;
+  #nav-links.active {
+      display: flex; /* SHOW the nav links when 'active' class is added */
+      transform: translateY(0); /* Slide into view */
+      opacity: 1; /* Become visible */
+      pointer-events: auto; /* Enable clicks */
   }
 
-  .top-nav ul li a::after {
+  #nav-links li {
+      margin: 10px 0; /* Vertical spacing for mobile links */
+      text-align: center; /* Center align text */
+  }
+
+  #nav-links li a {
+    color: #fff; /* White links for mobile menu */
+    padding: 12px 0; /* More padding for easier tapping */
+  }
+
+  #nav-links li a:hover {
+    color: #FFC107;
+  }
+
+  #nav-links li a::after {
     display: none; /* Remove underline on mobile nav items */
   }
 
   .nav-btn {
-    margin-top: 10px;
+    margin-top: 15px; /* More space above the book now button */
     width: 80%; /* Make button wider on mobile */
-    max-width: 200px;
+    max-width: 250px; /* Limit max width */
+    font-size: 1.05em;
+  }
+
+  /* Hamburger Animation: Transform to 'X' */
+  .hamburger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg); /* Top bar rotates and moves down */
+  }
+
+  .hamburger.active span:nth-child(2) {
+      opacity: 0; /* Middle bar disappears */
+  }
+
+  .hamburger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg); /* Bottom bar rotates and moves up */
   }
 
   .hero-content h1 {
@@ -463,4 +551,3 @@ footer p {
   .btn { padding: 10px 20px; font-size: 1em; }
   .btn-large { padding: 12px 25px; font-size: 1.05em; }
 }
-
