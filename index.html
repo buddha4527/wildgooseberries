@@ -1,151 +1,790 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wild Gooseberries Thirunelly Resort - Wayanad</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Wild Gooseberries | Village Stay in Thirunelly, Wayanad</title>
+
+<meta name="description" content="Experience slow living at Wild Gooseberries, a peaceful Kerala village stay near Thirunelly Temple and Kalindi River in Wayanad."/>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#faf8f3;
+  color:#222;
+  overflow-x:hidden;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* NAVBAR */
+
+.top-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(10px);
+  padding:18px 0;
+}
+
+.top-nav .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.site-logo{
+  color:white;
+  text-decoration:none;
+  font-size:1.2rem;
+  font-weight:600;
+}
+
+#nav-links{
+  display:flex;
+  list-style:none;
+  gap:25px;
+  align-items:center;
+}
+
+#nav-links a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+#nav-links a:hover{
+  opacity:0.8;
+}
+
+.nav-btn{
+  background:#d7b56d;
+  color:black !important;
+  padding:10px 18px;
+  border-radius:30px;
+  font-weight:600;
+}
+
+/* HERO */
+
+.hero-header{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+  url('images/3212.jpg') center/cover no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.hero-content{
+  max-width:850px;
+  animation:fadeIn 1.5s ease;
+}
+
+.hero-content h1{
+  font-size:4rem;
+  line-height:1.1;
+  margin-bottom:20px;
+  font-family:'Playfair Display',serif;
+}
+
+.hero-tagline{
+  font-size:1.2rem;
+  line-height:1.8;
+  margin-bottom:35px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#d7b56d;
+  color:black;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+}
+
+/* GENERAL SECTION */
+
+.section{
+  padding:100px 0;
+}
+
+h2{
+  text-align:center;
+  font-size:2.7rem;
+  margin-bottom:50px;
+  font-family:'Playfair Display',serif;
+  color:#183028;
+}
+
+/* EXPERIENCE */
+
+.experience-section{
+  background:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.experience-section p{
+  max-width:850px;
+  margin:auto;
+  line-height:2;
+  color:#555;
+  font-size:1.05rem;
+}
+
+/* ABOUT */
+
+.about-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.about-text p{
+  line-height:2;
+  margin-bottom:20px;
+  color:#555;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* HIGHLIGHTS */
+
+.highlights-section{
+  background:#f1eee7;
+}
+
+.highlights-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.highlight-item{
+  background:white;
+  padding:35px 25px;
+  border-radius:20px;
+  transition:0.3s;
+  text-align:center;
+}
+
+.highlight-item:hover{
+  transform:translateY(-8px);
+}
+
+.highlight-item h3{
+  margin-bottom:15px;
+  color:#183028;
+  font-size:1.2rem;
+}
+
+.highlight-item p{
+  line-height:1.7;
+  color:#666;
+}
+
+/* GALLERY */
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  transition:0.4s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* PACKAGES */
+
+.packages{
+  background:#183028;
+  color:white;
+}
+
+.packages h2{
+  color:white;
+}
+
+.packages-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.package-card{
+  background:rgba(255,255,255,0.08);
+  padding:35px;
+  border-radius:20px;
+}
+
+.package-card h3{
+  margin-bottom:15px;
+  font-size:1.4rem;
+}
+
+.package-card p{
+  line-height:1.8;
+  color:#ddd;
+}
+
+/* REVIEWS */
+
+.reviews{
+  background:#f7f4ee;
+}
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.review-card{
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.review-card p{
+  line-height:1.9;
+  color:#555;
+  margin-bottom:20px;
+}
+
+.review-card span{
+  font-weight:600;
+  color:#183028;
+}
+
+/* CTA */
+
+.cta-section{
+  background:
+  linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('images/1112112.jpg') center/cover no-repeat;
+
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+}
+
+.cta-section h2{
+  color:white;
+}
+
+.cta-section p{
+  margin-bottom:30px;
+  line-height:1.8;
+}
+
+.btn-secondary{
+  background:#d7b56d;
+  color:black;
+}
+
+/* CONTACT */
+
+.contact-details{
+  text-align:center;
+  line-height:2;
+  margin-bottom:40px;
+}
+
+.contact-details a{
+  color:#183028;
+  text-decoration:none;
+}
+
+iframe{
+  border-radius:20px;
+  width:100%;
+  height:400px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:35px 20px;
+}
+
+.social-links{
+  margin-top:15px;
+}
+
+.social-links a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* WHATSAPP */
+
+.whatsapp-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  z-index:999;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero-content h1{
+    font-size:2.5rem;
+  }
+
+  .about-content{
+    grid-template-columns:1fr;
+  }
+
+  #nav-links{
+    display:none;
+  }
+
+  h2{
+    font-size:2rem;
+  }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <nav class="top-nav">
-    <div class="container">
-      <a href="index.html" class="site-logo">Wild Gooseberries Thirunelly Resort</a>
+<!-- NAVBAR -->
 
-      <div class="hamburger" id="hamburger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+<nav class="top-nav">
+
+  <div class="container">
+
+    <a href="#" class="site-logo">
+      Wild Gooseberries
+    </a>
+
+    <ul id="nav-links">
+
+      <li><a href="#about-us">About</a></li>
+      <li><a href="#gallery-section">Gallery</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+
+      <li>
+        <a href="https://wa.me/919562614314" target="_blank" class="nav-btn">
+          Book Now
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<header class="hero-header">
+
+  <div class="hero-content">
+
+    <h1>
+      Wake Up to Forest Mist & River Sounds
+    </h1>
+
+    <p class="hero-tagline">
+      A peaceful Kerala village stay near Thirunelly Temple,
+      surrounded by forests, rivers, and slow living experiences.
+    </p>
+
+    <a href="#about-us" class="btn btn-primary">
+      Discover the Experience
+    </a>
+
+  </div>
+
+</header>
+
+<!-- EXPERIENCE -->
+
+<section class="experience-section">
+
+  <div class="container">
+
+    <h2>
+      Not Just a Stay. A Pause From City Life.
+    </h2>
+
+    <p>
+      Wake up to birdsong, walk to the river, drink chai under mango trees,
+      explore misty forest roads, and reconnect with a slower rhythm of life
+      in Thirunelly, Wayanad.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about-us" class="section">
+
+  <div class="container">
+
+    <h2>Experience Wild Gooseberries</h2>
+
+    <div class="about-content">
+
+      <div class="about-text">
+
+        <p>
+          Nestled amidst the lush greenery of Thirunelly,
+          Wild Gooseberries offers a serene escape in a beautifully restored
+          traditional Kerala home and charming A-frame cottages.
+        </p>
+
+        <p>
+          Located close to Thirunelly Temple and the Kalindi River,
+          our retreat is ideal for couples, families, backpackers,
+          workations, and travelers seeking peace away from crowded tourism.
+        </p>
+
+        <p>
+          Enjoy authentic Kerala food, riverside walks, village experiences,
+          and peaceful evenings surrounded by nature.
+        </p>
+
       </div>
 
-      <ul id="nav-links">
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#gallery-section">Gallery</a></li>
-        <li><a href="#contact-section">Contact</a></li>
-        <li><a href="https://wa.me/919562614314" target="_blank" class="nav-btn">Book Now</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <header class="hero-header">
-    <div class="hero-content">
-      <h1>Welcome to Wild Gooseberries Resort</h1>
-      <p class="hero-tagline">Your Tranquil Escape in Thirunelly, Wayanad</p>
-      <a href="#about-us" class="btn btn-primary">Discover More</a>
-    </div>
-  </header>
-
-  <section id="about-us" class="section about-section">
-    <div class="container">
-      <h2>Experience Tranquility in Thirunelly, Wayanad</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Nestled amidst the lush greenery of Thirunelly, Wild Gooseberries Resort offers a serene escape in a beautifully restored traditional Kerala home. Just a short walk from the ancient Thirunelly Temple and the pristine Kalindi River, our resort provides a peaceful sanctuary for your mind and soul.</p>
-          <p>Enjoy homely, authentic Kerala cuisine, comfortable accommodations, and immerse yourself in nature at its very best. Our affordable and tranquil setting is perfect for families, couples, and anyone seeking a refreshing weekend getaway amidst Wayanad's captivating beauty.</p>
-          <p>Explore nearby trekking trails, unwind by the riverside, or simply relax in the serene ambiance of our garden. At Wild Gooseberries, every moment is an invitation to reconnect with yourself and nature.</p>
-        </div>
-        <div class="about-image">
-          <img src="images/1121.jpg" alt="Wild Gooseberries Resort - Traditional Kerala Home Exterior">
-        </div>
+      <div class="about-image">
+        <img src="images/1121.jpg" alt="Wild Gooseberries Resort">
       </div>
-    </div>
-  </section>
 
-  <section class="section highlights-section">
-    <div class="container">
-      <h2>Why Choose Wild Gooseberries?</h2>
-      <div class="highlights-grid">
-        <div class="highlight-item">
-          <img src="images/icon_temple.png" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=Temple';" alt="Temple Icon"> <h3>Walkable to Thirunelly Temple</h3>
-          <p>Immerse yourself in spiritual tranquility.</p>
-        </div>
-        <div class="highlight-item">
-          <img src="images/icon_nature.png" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=Nature';" alt="Nature Icon">
-          <h3>Close to Kalindi River</h3>
-          <p>Enjoy riverside strolls and fresh air.</p>
-        </div>
-        <div class="highlight-item">
-          <img src="images/icon_food.png" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=Food';" alt="Food Icon">
-          <h3>Homely Kerala Cuisine</h3>
-          <p>Savor authentic local dishes, freshly prepared.</p>
-        </div>
-        <div class="highlight-item">
-          <img src="images/icon_family.png" onerror="this.onerror=null; this.src='https://placehold.co/60x60?text=Family';" alt="Family Icon">
-          <h3>Family-Friendly & Affordable</h3>
-          <p>Comfortable stays for all, without breaking the bank.</p>
-        </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HIGHLIGHTS -->
+
+<section class="section highlights-section">
+
+  <div class="container">
+
+    <h2>Why Guests Love Staying Here</h2>
+
+    <div class="highlights-grid">
+
+      <div class="highlight-item">
+        <h3>🌿 Walk to Thirunelly Temple</h3>
+        <p>Experience the spiritual calm of one of Kerala’s ancient temples.</p>
       </div>
-    </div>
-  </section>
 
-  <section id="gallery-section" class="section gallery-section">
-    <div class="container">
-      <h2>Our Photo Gallery</h2>
-      <div class="gallery-grid">
-        <img src="images/3212.jpg" alt="Wild Gooseberries Entrance Gate" loading="lazy"/>
-        <img src="images/1112112.jpg" alt="Resort Overview with Cabins" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0012.jpg" alt="Resort Overview with Pond and Greenery" loading="lazy"/>
-        <img src="images/111112.jpg" alt="Landscape with Pond and Mango Tree" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0019.jpg" alt="Green Cottage and Thatched Hut Area" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0009.jpg" alt="Front View of Green Cottage Verandah" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0010.jpg" alt="Exterior of Green Cottage with Blue Bench" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0016.jpg" alt="Stairs Leading to Green Cottage" loading="lazy"/>
-        <img src="images/123.jpg" alt="A-Frame Cabin Exterior (Sunny)" loading="lazy"/>
-        <img src="images/112.jpg" alt="A-Frame Cabin Close-up" loading="lazy"/>
-        <img src="images/1112.jpg" alt="Chembakam A-Frame Cabin" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0015.jpg" alt="A-frame Hut Accommodation" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0014.jpg" alt="A-Frame Pathway and Small Water Body" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0007.jpg" alt="Interior of Traditional Room with Red Floor" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0008.jpg" alt="Interior with Wooden Bench and Traditional Roof" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0020.jpg" alt="Interior Window with Red Curtains" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0021.jpg" alt="Cozy Bedroom Interior" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0011.jpg" alt="Outdoor Swing in Lush Greenery" loading="lazy"/>
-        <img src="images/IMG-20250530-WA0017.jpg" alt="Outdoor Swing with Cabin View" loading="lazy"/>
-        <img src="images/1111123.jpg" alt="Wild Gooseberries Logo" loading="lazy"/>
+      <div class="highlight-item">
+        <h3>🌊 Morning River Walks</h3>
+        <p>Enjoy peaceful riverside moments near the beautiful Kalindi River.</p>
       </div>
-    </div>
-  </section>
 
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready for Your Tranquil Getaway?</h2>
-      <p>Connect with us to plan your perfect stay at Wild Gooseberries Thirunelly Resort.</p>
-      <a href="https://wa.me/919562614314" target="_blank" class="btn btn-secondary btn-large">WhatsApp Us Now</a>
-    </div>
-  </section>
-
-  <section id="contact-section" class="section contact-section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <div class="contact-details">
-        <p><strong>Phone:</strong> <a href="tel:+919562614314">+91 95626 14314</a>, <a href="tel:+919747914314">+91 97479 14314</a></p>
-        <p><strong>Email:</strong> <a href="mailto:wildgooseberriesthirunelly@gmail.com">wildgooseberriesthirunelly@gmail.com</a></p>
-        <p><strong>Address:</strong> Wild Gooseberries Resort, Near Thirunelly Temple, Thirunelly, Wayanad, Kerala.</p>
+      <div class="highlight-item">
+        <h3>🍛 Traditional Kerala Meals</h3>
+        <p>Freshly prepared homely food with authentic local flavors.</p>
       </div>
-      <div class="map-container" style="width: 100%; height: 400px; margin-top: 2rem;">
-        <img src="images/IMG-20250530-WA0005.jpg" alt="Wild Gooseberries Resort Location Map" style="width: 100%; height: auto; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-        <!-- Replace the iframe src with your actual Google Maps embed code -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.9354000000003!2d76.0123!3d11.8365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba32c91a0c4f83b%3A0x60c7f0f67e5b2e2d!2sWild%20Gooseberries%20Thirunelly%20Resort!5e0!3m2!1sen!2sin!4v1719568972322!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <div class="highlight-item">
+        <h3>🌄 Slow Village Living</h3>
+        <p>Relax, disconnect from stress, and embrace nature at its best.</p>
       </div>
-    </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Wild Gooseberries Thirunelly Resort. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/wild_gooseberries/" target="_blank" aria-label="Instagram"><img src="images/instagram-icon.png" onerror="this.onerror=null; this.src='https://placehold.co/24x24/cccccc/333333?text=IG';" alt="Instagram"></a>
-        <a href="https://www.facebook.com/profile.php/?id=100093238527431" target="_blank" aria-label="Facebook"><img src="images/facebook-icon.png" onerror="this.onerror=null; this.src='https://placehold.co/24x24/cccccc/333333?text=FB';" alt="Facebook"></a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery-section" class="section">
+
+  <div class="container">
+
+    <h2>Moments at Wild Gooseberries</h2>
+
+    <div class="gallery-grid">
+
+      <img src="images/3212.jpg" alt="">
+      <img src="images/1112112.jpg" alt="">
+      <img src="images/IMG-20250530-WA0012.jpg" alt="">
+      <img src="images/111112.jpg" alt="">
+      <img src="images/IMG-20250530-WA0019.jpg" alt="">
+      <img src="images/123.jpg" alt="">
+      <img src="images/112.jpg" alt="">
+      <img src="images/IMG-20250530-WA0007.jpg" alt="">
+      <img src="images/IMG-20250530-WA0021.jpg" alt="">
+      <img src="images/IMG-20250530-WA0011.jpg" alt="">
+      <img src="images/IMG-20250530-WA0017.jpg" alt="">
+      <img src="images/1111123.jpg" alt="">
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PACKAGES -->
+
+<section id="packages" class="section packages">
+
+  <div class="container">
+
+    <h2>Stay Experiences</h2>
+
+    <div class="packages-grid">
+
+      <div class="package-card">
+        <h3>Couple Escape</h3>
+        <p>
+          Quiet stays, nature walks, riverside moments,
+          and peaceful evenings in the forests of Wayanad.
+        </p>
       </div>
+
+      <div class="package-card">
+        <h3>Family Retreat</h3>
+        <p>
+          Spacious village-style stays ideal for families
+          looking for calm, nature, and quality time together.
+        </p>
+      </div>
+
+      <div class="package-card">
+        <h3>Workation Stay</h3>
+        <p>
+          Escape city stress and work peacefully
+          surrounded by greenery and fresh mountain air.
+        </p>
+      </div>
+
     </div>
-  </footer>
 
-  <a class="whatsapp-button" href="https://wa.me/919562614314" target="_blank">
-    WhatsApp Us
-  </a>
+  </div>
 
-  <script src="js/script.js"></script>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section reviews">
+
+  <div class="container">
+
+    <h2>Guest Experiences</h2>
+
+    <div class="review-grid">
+
+      <div class="review-card">
+        <p>
+          “One of the calmest places we stayed in Wayanad.
+          Perfect for slowing down and relaxing.”
+        </p>
+        <span>— Guest from Bangalore</span>
+      </div>
+
+      <div class="review-card">
+        <p>
+          “Beautiful traditional atmosphere,
+          great food, and peaceful surroundings.”
+        </p>
+        <span>— Family Traveler</span>
+      </div>
+
+      <div class="review-card">
+        <p>
+          “The river walks and village vibe were unforgettable.”
+        </p>
+        <span>— Couple Traveler</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+    <h2>Ready for Your Peaceful Wayanad Escape?</h2>
+
+    <p>
+      Connect with us directly on WhatsApp
+      to plan your stay at Wild Gooseberries.
+    </p>
+
+    <a href="https://wa.me/919562614314"
+       target="_blank"
+       class="btn btn-secondary">
+
+      Book Your Stay
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact-section" class="section">
+
+  <div class="container">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact-details">
+
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+919562614314">+91 95626 14314</a>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:wildgooseberriesthirunelly@gmail.com">
+          wildgooseberriesthirunelly@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Location:</strong>
+        Near Thirunelly Temple, Wayanad, Kerala
+      </p>
+
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.9354000000003!2d76.0123!3d11.8365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba32c91a0c4f83b%3A0x60c7f0f67e5b2e2d!2sWild%20Gooseberries%20Thirunelly%20Resort!5e0!3m2!1sen!2sin!4v1719568972322!5m2!1sen!2sin"
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      © 2026 Wild Gooseberries Thirunelly Resort.
+      All Rights Reserved.
+    </p>
+
+    <div class="social-links">
+
+      <a href="https://www.instagram.com/wild_gooseberries/" target="_blank">
+        Instagram
+      </a>
+
+      <a href="https://www.facebook.com/profile.php/?id=100093238527431" target="_blank">
+        Facebook
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp-button"
+   href="https://wa.me/919562614314"
+   target="_blank">
+
+   WhatsApp Us
+
+</a>
 
 </body>
 </html>
