@@ -1,31 +1,17 @@
-# Wild Gooseberries — GitHub Pages Website
+WILD GOOSEBERRIES THIRUNELLY — GITHUB PAGES
 
-## Upload
-Copy these items into the root of your GitHub repository:
+Upload ALL files and the assets folder to the ROOT of your GitHub Pages repository.
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `favicon.svg`
-- `assets/` (contains the 24 supplied Wild Gooseberries photos)
+Required structure:
+index.html
+style.css
+script.js
+favicon.svg
+assets/
+  wild-gooseberries-01.jpg ... wild-gooseberries-24.jpg
 
-The site is a static GitHub Pages website. No build step is required.
+Important: keep the assets folder at the same level as index.html. Do not put assets inside another nested folder.
 
-## Main features
-- Mobile responsive navigation
-- Full-screen hero using the supplied property photography
-- Kerala heritage / wildlife-focused positioning
-- Accommodation section
-- Kerala food menu
-- Experiences and add-ons
-- Gallery with lightbox
-- ₹9,999 package presentation for up to 8 guests
-- WhatsApp floating button
-- WhatsApp enquiry form
-- Google Maps search button
-- No backend required
+This version uses JPEG images for broad mobile-browser compatibility and includes explicit mobile image sizing.
 
-## Important
-The WhatsApp number currently used is `+91 95626 14314`, matching the existing Wild Gooseberries website file. If you want a different booking number, replace `919562614314` in `index.html` and `script.js`.
-
-The website intentionally says "package starts from ₹9,999" and asks guests to confirm dates because the supplied information did not specify a stay duration or a fixed seasonal rate.
+Then enable GitHub Pages from Settings > Pages > Deploy from branch > main/root.
